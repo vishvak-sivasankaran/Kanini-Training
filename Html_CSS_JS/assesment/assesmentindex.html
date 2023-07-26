@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="assesmentstyle.css" />
+    <script src="assesmentscript.js"></script>
+    <title>Online Restaurent table Reservation</title>
+  </head>
+  <body>
+    <header>
+      <h1>Online Restaurent table reservation</h1>
+    </header>
+    <main>
+        <div class="main">
+            <div class="main-1">
+      <table class="table-1">
+        
+        <tbody>
+            <form>
+          <tr>
+            <td><label>Guest Name</label></td>
+            <td><input type="text" placeholder="Guest Name" id="name" onblur="validateName()"/></td>
+          </tr>
+          <tr>
+            <td><label>Mobile Number</label></td>
+            <td><input type="tel"  id="mobileNumber" onblur="validateContactNo()"/></td>
+          </tr>
+          <tr>
+           
+              <td><label>Email</label></td>
+              <td><input type="email" id="email" onblur="emailValidation()"/></td>
+            </tr>
+            <tr>
+              <td><label>Number of Guests</label></td>
+              <td><input type="number" min="2" max="20" placeholder="Enter Number of Guests" id="numberOfGuests" /></td>
+            </tr>
+            <tr>
+                <td><label>Session type</label></td>
+                <td>
+                    <div class="session">
+                    <input type="radio" id="lunch" name="sessionType" value="Lunch(12pm-3pm)">
+                    <label for="lunch">Lunch(12pm-3pm)</label>
+                </div>
+                    <div class="session">
+                    <input type="radio" id="dinner" name="sessionType" value="Dinner(7pm-10pm)">
+                    <label for="dinner">Dinner(7pm-10pm)</label>
+                </div>
+                </td>
+              </tr>
+              <tr>
+                <td><label>Date of visit</label></td>
+              <td> <input type="text" placeholder=“dd/MM/yyyy” id="dateOfvisit" ></td> 
+              </tr>
+              <tr>
+                <td><label>Duration</label></td>
+                <td><input type="number" placeholder="Enter Duration" id="duration"/>min</td>
+              </tr>
+              <tr>
+                <td><label>Select table</label></td>
+                <td>
+                    <select id="tableName">
+                        <option value="TA1">TA1</option>
+                        <option value="TA2">TA2</option>
+                        <option value="TA3">TA3</option>
+                        <option value="TA4">TA4</option>
+                        <option value="TB1">TB1</option>
+                        <option value="TB2">TB2</option>
+                        <option value="TB3">TB3</option>
+                        <option value="TB4">TB4</option>
+                    </select>
+                </td>
+              </tr>
+              <tr>
+                <td><label>Payment Mode</label></td>
+                <td>
+                    <input type="radio" id="oc" name="paymentMode" value="OC">
+                    <label for="oc">CC</label>
+                    <input type="radio" id="dc" name="paymentMode" value="DC">
+                    <label for="dc">DC</label><br>
+                </td>
+              </tr>
+              <tr>
+                <td><label>Card Numbeer</label></td>
+                <td><input type="tel" placeholder="Enter card Number" id="cardNumber" onblur="validateCardNo()" /></td>
+              </tr>
+              <tr>
+                <td><label>CVV Number</label></td>
+                <td><input type="tel" placeholder="Enter cvv Number" id="cvvNumber" onblur="validatecvv()" /></td>
+              </tr>
+    </form>
+    <tr>
+      <td colspan="2" id="order"><button onclick="costCalculation()">Reserve</button>
+      <button>reset </button></td>
+    </tr>
+    <tr>
+      <td colspan="2" >
+         <div id="result"></div>
+      </td>
+  </tr>
+            </tbody>
+      </table>
+    </div>
+    <div class="main-2">
+        <h4>Rate card for Lunch and Dinner</h4>
+      <table class="table-2">
+        <th>
+            <tr>
+                <td>Session Type</td>
+                <td>Chargers per Guest (in Rs)</td>
+                <td>Number of Guest</td>
+                <td>Advance payment(in Rs)</td>
+            </tr>
+           
+        </th>
+        <tr>
+            <td>Lunch</td>
+            <td>625</td>
+            <td>Upto 3</td>
+            <td>500</td>
+        </tr>
+        <tr>
+            <td>Lunch</td>
+            <td>625</td>
+            <td>Upto 6</td>
+            <td>1000</td>
+        </tr>
+        <tr>
+            <td>Lunch</td>
+            <td>625</td>
+            <td>Upto 10</td>
+            <td>2500</td>
+        </tr>
+        <tr>
+            <td>Lunch</td>
+            <td>625</td>
+            <td>Upto 20</td>
+            <td>4000</td>
+        </tr>
+        <tr>
+            <td>Dinner</td>
+            <td>825</td>
+            <td>Upto 3</td>
+            <td>600</td>
+        </tr>
+        <tr>
+            <td>Dinner</td>
+            <td>825</td>
+            <td>Upto 6</td>
+            <td>1200</td>
+        </tr>
+        <tr>
+            <td>Dinner</td>
+            <td>825</td>
+            <td>Upto 10</td>
+            <td>2750</td>
+        </tr>
+        <tr>
+            <td>Dinner</td>
+            <td>825</td>
+            <td>Upto 20</td>
+            <td>4200</td>
+        </tr>
+      </table>
+    </div>
+</div>
+    </main>
+  </body>
+</html>
